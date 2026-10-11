@@ -168,6 +168,8 @@ a {
   display: flex;
   flex-direction: column;
   gap: 32px;
+  width: 100%;
+  min-width: 0;
 }
 
 .hero {
@@ -199,10 +201,18 @@ a {
   color: var(--muted);
 }
 
+#allGamesContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
 .genre-section {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  width: 100%;
+  min-width: 0;
 }
 
 .genre-header {
@@ -217,6 +227,7 @@ a {
   font-weight: 700;
   color: var(--text);
   white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .genre-divider {
@@ -229,8 +240,11 @@ a {
   display: flex;
   gap: 18px;
   overflow-x: auto;
-  padding-bottom: 8px;
+  overflow-y: hidden;
+  padding-bottom: 12px;
   scroll-behavior: smooth;
+  width: 100%;
+  min-width: 0;
 }
 
 .games-grid::-webkit-scrollbar {
@@ -253,8 +267,8 @@ a {
 .game-card {
   display: flex;
   flex-direction: column;
-  height: 100%;
-  min-width: 220px;
+  height: 320px;
+  width: 220px;
   background: linear-gradient(180deg, var(--panel-2), var(--panel));
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -277,6 +291,7 @@ a {
   background-repeat: no-repeat;
   position: relative;
   border-radius: 6px 6px 0 0;
+  flex-shrink: 0;
 }
 
 .game-thumbnail::before {
@@ -292,12 +307,14 @@ a {
   display: flex;
   flex-direction: column;
   padding: 15px 14px 12px;
+  min-height: 0;
 }
 
 .game-title {
   font-size: 1rem;
   font-weight: 700;
   margin-bottom: 6px;
+  line-height: 1.2;
 }
 
 .game-genre {
@@ -311,6 +328,7 @@ a {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .game-meta {
@@ -332,6 +350,7 @@ a {
   justify-content: center;
   cursor: pointer;
   transition: 0.2s ease;
+  flex-shrink: 0;
 }
 
 .play-button:hover {
@@ -353,7 +372,6 @@ a {
   padding: 60px 20px;
   color: var(--muted);
   text-align: center;
-  grid-column: 1 / -1;
 }
 
 .no-results svg {
@@ -370,6 +388,11 @@ a {
 
   .sidebar {
     top: 90px;
+  }
+
+  .game-card {
+    width: 180px;
+    height: 300px;
   }
 }
 
@@ -401,7 +424,8 @@ a {
   }
 
   .game-card {
-    min-width: 160px;
+    width: 160px;
+    height: 280px;
   }
 }
 
@@ -421,6 +445,7 @@ a {
   }
 
   .game-card {
-    min-width: 140px;
+    width: 140px;
+    height: 260px;
   }
 }
