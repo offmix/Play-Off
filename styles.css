@@ -44,7 +44,7 @@ a {
 }
 
 .topbar-container {
-  max-width: 1500px;
+  max-width: 1600px;
   margin: 0 auto;
   padding: 16px 24px;
   display: flex;
@@ -103,17 +103,20 @@ a {
   color: var(--muted);
 }
 
-.page-shell {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 28px 24px 40px;
+.main-wrapper {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 28px;
+  grid-template-columns: 240px 1fr;
+  gap: 24px;
+  max-width: 1600px;
+  margin: 0 auto;
+  padding: 24px;
+  min-height: calc(100vh - 80px);
 }
 
 .sidebar {
-  position: relative;
+  position: sticky;
+  top: 100px;
+  height: fit-content;
 }
 
 .sidebar-section {
@@ -164,7 +167,7 @@ a {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 32px;
 }
 
 .hero {
@@ -194,6 +197,31 @@ a {
 
 .hero-desc {
   color: var(--muted);
+}
+
+.genre-section {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.genre-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.genre-title {
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.genre-divider {
+  flex: 1;
+  height: 1px;
+  background: var(--line);
 }
 
 .games-grid {
@@ -312,12 +340,27 @@ a {
   color: var(--muted);
 }
 
-@media (max-width: 900px) {
-  .page-shell {
-    grid-template-columns: 1fr;
+@media (max-width: 1024px) {
+  .main-wrapper {
+    grid-template-columns: 200px 1fr;
+    gap: 16px;
+    padding: 16px;
   }
 
   .sidebar {
+    top: 90px;
+  }
+}
+
+@media (max-width: 768px) {
+  .main-wrapper {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .sidebar {
+    position: relative;
+    top: auto;
     order: -1;
   }
 
@@ -329,6 +372,15 @@ a {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 8px;
+  }
+
+  .hero {
+    border-radius: 6px;
+    padding: 28px 20px;
+  }
+
+  .games-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
   }
 }
 
@@ -343,17 +395,11 @@ a {
     max-width: none;
   }
 
-  .page-shell {
-    padding: 18px 14px 24px;
-    gap: 16px;
+  .main-wrapper {
+    padding: 12px 12px 24px;
   }
 
   .games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-  }
-
-  .hero {
-    border-radius: 6px;
-    padding: 28px 20px;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   }
 }
