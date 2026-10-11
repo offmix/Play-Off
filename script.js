@@ -54,6 +54,27 @@ const games = [
     genre: 'action',
     path: 'Games/Survivor.io.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvuruXdzy2W6gxRCsvJUmSOnqOC--IASAyZFsRmnakQA&s=10'
+  },
+  {
+    id: 9,
+    title: 'GTA Vice City',
+    genre: 'action',
+    path: 'Games/GTA%20Vice%20City.html',
+    thumb: 'https://static.wikia.nocookie.net/gta4150/images/3/3e/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%BB%E3%83%95%E3%83%88%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%BB%E3%83%90%E3%82%A4%E3%82%B9%E3%82%B7%E3%83%86%E3%82%A3.JPG/revision/latest?cb=20230914144840&path-prefix=ja'
+  },
+  {
+    id: 10,
+    title: 'Paper.io',
+    genre: 'casual',
+    path: 'Games/Paperio.html',
+    thumb: 'https://paperio3d.org//data/image/game/paper-io-favicon.jpg'
+  },
+  {
+    id: 11,
+    title: 'Cookie Clicker',
+    genre: 'casual',
+    path: 'Games/CookieClicker.html',
+    thumb: 'https://g.hebi.gg/cookie-clicker/cookie-clicker.jpg'
   }
 ];
 
@@ -67,7 +88,8 @@ let currentGenre = 'all';
 function getGenreLabel(genre) {
   const labels = {
     action: 'アクション',
-    racing: 'レーシング'
+    racing: 'レーシング',
+    casual: 'カジュアル'
   };
   return labels[genre] || 'その他';
 }
