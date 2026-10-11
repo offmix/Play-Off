@@ -216,6 +216,7 @@ a {
   font-size: 1.3rem;
   font-weight: 700;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .genre-divider {
@@ -225,21 +226,41 @@ a {
 }
 
 .games-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  display: flex;
   gap: 18px;
-  align-items: stretch;
+  overflow-x: auto;
+  padding-bottom: 8px;
+  scroll-behavior: smooth;
+}
+
+.games-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.games-grid::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.games-grid::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 4px;
+}
+
+.games-grid::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
 }
 
 .game-card {
   display: flex;
   flex-direction: column;
   height: 100%;
+  min-width: 220px;
   background: linear-gradient(180deg, var(--panel-2), var(--panel));
   border: 1px solid var(--line);
   border-radius: 8px;
   overflow: hidden;
   transition: 0.2s ease;
+  flex-shrink: 0;
 }
 
 .game-card:hover {
@@ -379,8 +400,8 @@ a {
     padding: 28px 20px;
   }
 
-  .games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  .game-card {
+    min-width: 160px;
   }
 }
 
@@ -399,7 +420,7 @@ a {
     padding: 12px 12px 24px;
   }
 
-  .games-grid {
-    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+  .game-card {
+    min-width: 140px;
   }
 }
