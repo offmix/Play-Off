@@ -37,7 +37,7 @@ const games = [
   {
     id: 6,
     title: 'Real Flight Simulator',
-    genre: 'racing',
+    genre: 'simulator',
     path: 'Games/RFS.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRitjB3E8W0JDsmXv8Y3MDUdSRuKVqbQQG63dGX3mkNNg&s=10'
   },
@@ -78,20 +78,22 @@ const games = [
   }
 ];
 
-const gamesGrid = document.getElementById('gamesGrid');
+const allGamesContainer = document.getElementById('allGamesContainer');
 const searchInput = document.getElementById('searchInput');
 const categoryBtns = document.querySelectorAll('.category-btn');
 const noResults = document.getElementById('noResults');
 
 let currentGenre = 'all';
 
+const genreLabels = {
+  action: 'アクション',
+  racing: 'レーシング',
+  casual: 'カジュアル',
+  simulator: 'シミュレーター'
+};
+
 function getGenreLabel(genre) {
-  const labels = {
-    action: 'アクション',
-    racing: 'レーシング',
-    casual: 'カジュアル'
-  };
-  return labels[genre] || 'その他';
+  return genreLabels[genre] || 'その他';
 }
 
 function createGameCard(game) {
@@ -128,11 +130,58 @@ function filterAndDisplayGames() {
   });
 
   if (filtered.length === 0) {
-    gamesGrid.innerHTML = '';
+    allGamesContainer.innerHTML = '';
     noResults.style.display = 'flex';
+    return;
+  }
+
+  noResults.style.display = 'none';
+
+  if (currentGenre === 'all') {
+    // ジャンルごとに分ける
+    const grouped = {};
+    Object.keys(genreLabels).forEach(genre => {
+      grouped[genre] = [];
+    });
+
+    filtered.forEach(game => {
+      if (grouped[game.genre]) {
+        grouped[game.genre].push(game);
+      }
+    });
+
+    let html = '';
+    Object.entries(grouped).forEach(([genre, genreGames]) => {
+      if (genreGames.length > 0) {
+        html += `
+          <div class="genre-section">
+            <div class="genre-header">
+              <h2 class="genre-title">${getGenreLabel(genre)}</h2>
+              <div class="genre-divider"></div>
+            </div>
+            <div class="games-grid">
+              ${genreGames.map(createGameCard).join('')}
+            </div>
+          </div>
+        `;
+      }
+    });
+
+    allGamesContainer.innerHTML = html;
   } else {
-    gamesGrid.innerHTML = filtered.map(createGameCard).join('');
-    noResults.style.display = 'none';
+    // 選択されたジャンルのみ表示
+    const html = `
+      <div class="genre-section">
+        <div class="genre-header">
+          <h2 class="genre-title">${getGenreLabel(currentGenre)}</h2>
+          <div class="genre-divider"></div>
+        </div>
+        <div class="games-grid">
+          ${filtered.map(createGameCard).join('')}
+        </div>
+      </div>
+    `;
+    allGamesContainer.innerHTML = html;
   }
 }
 
