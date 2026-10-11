@@ -75,7 +75,7 @@ a {
   gap: 12px;
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 12px;
+  border-radius: 8px;
   padding: 10px 16px;
 }
 
@@ -119,7 +119,7 @@ a {
 .sidebar-section {
   background: var(--panel);
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 12px;
   padding: 20px;
 }
 
@@ -141,7 +141,7 @@ a {
   width: 100%;
   background: transparent;
   border: 1px solid var(--line);
-  border-radius: 10px;
+  border-radius: 8px;
   color: var(--muted);
   padding: 11px 12px;
   text-align: left;
@@ -170,7 +170,7 @@ a {
 .hero {
   background: linear-gradient(135deg, rgba(79,195,247,0.12), rgba(124,156,255,0.08));
   border: 1px solid var(--line);
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 40px 28px;
   min-height: 180px;
   display: flex;
@@ -209,15 +209,15 @@ a {
   height: 100%;
   background: linear-gradient(180deg, var(--panel-2), var(--panel));
   border: 1px solid var(--line);
-  border-radius: 16px;
+  border-radius: 14px;
   overflow: hidden;
   transition: 0.2s ease;
 }
 
 .game-card:hover {
-  transform: translateY(-4px);
+  transform: translateY(-6px);
   border-color: var(--accent);
-  box-shadow: 0 16px 30px rgba(79,195,247,0.12);
+  box-shadow: 0 20px 40px rgba(79,195,247,0.15);
 }
 
 .game-thumbnail {
@@ -227,6 +227,7 @@ a {
   background-position: center;
   background-repeat: no-repeat;
   position: relative;
+  border-radius: 12px 12px 0 0;
 }
 
 .game-thumbnail::before {
@@ -234,6 +235,7 @@ a {
   position: absolute;
   inset: 0;
   background: linear-gradient(180deg, rgba(0,0,0,0.08), rgba(0,0,0,0.3));
+  border-radius: 12px 12px 0 0;
 }
 
 .game-info {
@@ -273,13 +275,19 @@ a {
   width: 36px;
   height: 36px;
   border: none;
-  border-radius: 10px;
+  border-radius: 8px;
   background: var(--accent);
   color: #07131d;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.play-button:hover {
+  background: var(--accent-2);
+  transform: scale(1.08);
 }
 
 .play-button svg {
@@ -319,7 +327,7 @@ a {
 
   .category-buttons {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 8px;
   }
 }
@@ -337,9 +345,15 @@ a {
 
   .page-shell {
     padding: 18px 14px 24px;
+    gap: 16px;
   }
 
   .games-grid {
     grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  }
+
+  .hero {
+    border-radius: 12px;
+    padding: 28px 20px;
   }
 }
