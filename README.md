@@ -13,7 +13,7 @@ Play Off！はブラウザで遊べるゲームを集めています。
 ---
 ## [v1.1.0] - 2026-10-14
 
-### ✨ 追加
+###  追加
 - 新しいゲームを追加
 - ゲーム:Slope 2 Player,Undertale,ブロックブラスト,ちいかわパズル,REPO,Slither.io,Snow.io,StickMan Hook,Snowride,Burnin' Rubber 5 XS
 
@@ -28,11 +28,17 @@ Play Off！はブラウザで遊べるゲームを集めています。
 - 追加してほしいゲームや機能、評価を送れます。
 [こちらから](https://forms.gle/kG2yhXak9CqULdQ39)
 ## やるべきこと
- - [ ] GB/GBA,DSなどのゲームを追加。
- - [ ] UIをAIのから脱却。
+ - [ ] GB/GBA,DSなどのレトロゲーム対応
+ - [ ] UIを独自性の高いものへ
  - [ ] セーブデータを保存できるように。
  - [ ] 左のサイドバーをCrazyGamesに近づけたい。
 
  ### 開発者
   - off_mix
   - E233-NambuLine
+
+---
+
+© 2026 off_mix / Play Off！™  
+本サイト独自の文章・ロゴなどの無断転載、
+複製、再配布を禁止します。 
