@@ -48,42 +48,49 @@ const games = [
     path: 'Games/Slope.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQkrvwXmhXpn8cnl3DMr54X1FdOt3qb-g2A3yOh8Pn-xw&s=10'
   },
-   {
+  {
     id: 8,
+    title: 'Slope 2 Player',
+    genre: 'action',
+    path: 'Games/Slope 2 Player.html',
+    thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCIyOlCeQ_dhbh7Q0gL2jZJ0tkhFSc0aOJhO4EowcZHw&s'
+  },
+   {
+    id: 9,
     title: 'Slope 3',
     genre: 'action',
     path: 'Games/Slope3.html',
     thumb: 'https://slopegame.net/data/image/game/slope-3.jpg'
   }, {
-    id: 9,
+    id: 10,
     title: 'Survivor.io',
     genre: 'action',
     path: 'Games/Survivor.io.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvuruXdzy2W6gxRCsvJUmSOnqOC--IASAyZFsRmnakQA&s=10'
   },
   {
-    id: 10,
+    id: 11,
     title: 'GTA Vice City',
     genre: 'action',
     path: 'Games/GTA%20Vice%20City.html',
     thumb: 'https://static.wikia.nocookie.net/gta4150/images/3/3e/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%BB%E3%83%95%E3%83%88%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%BB%E3%83%90%E3%82%A4%E3%82%B9%E3%82%B7%E3%83%86%E3%82%A3.JPG/revision/latest?cb=20230914144840&path-prefix=ja'
   },
   {
-    id: 11,
+    id: 12,
     title: 'Paper.io',
     genre: 'casual',
     path: 'Games/Paperio.html',
     thumb: 'https://paperio3d.org//data/image/game/paper-io-favicon.jpg'
   },
   {
-    id: 12,
+    id: 13,
     title: 'Cookie Clicker',
     genre: 'casual',
     path: 'Games/CookieClicker.html',
     thumb: 'https://g.hebi.gg/cookie-clicker/cookie-clicker.jpg'
   } 
   {
-    id: 13,
+    id: 14,
     title: 'UnderTale',
     genre: 'casual',
     path: 'Games/Undertale.html',
