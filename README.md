@@ -33,4 +33,6 @@ Play Off！はブラウザで遊べるゲームを集めています。
  - [ ] セーブデータを保存できるように。
  - [ ] 左のサイドバーをCrazyGamesに近づけたい。
 
- ### by off_mix
+ ### 開発者
+  - off_mix
+  - E233-NambuLine
