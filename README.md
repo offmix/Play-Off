@@ -15,7 +15,7 @@ Play Off！はブラウザで遊べるゲームを集めています。
 
 ### ✨ 追加
 - 新しいゲームを追加
-- ゲーム:Slope 2 Player,Undertale,ブロックブラスト,ちいかわパズル,REPO,Slither.io,Snow.io,StickMan Hook,Snowride
+- ゲーム:Slope 2 Player,Undertale,ブロックブラスト,ちいかわパズル,REPO,Slither.io,Snow.io,StickMan Hook,Snowride,Burnin' Rubber 5 XS
 
 ## [v1.0.0] - 2026-10-09
 
