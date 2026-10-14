@@ -74,7 +74,7 @@ const games = [
     title: 'GTA Vice City',
     genre: 'action',
     path: 'Games/GTA%20Vice%20City.html',
-    thumb: 'https://static.wikia.nocookie.net/gta4150/images/3/3e/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%BB%E3%83%95%E3%83%88%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%BB%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9%E3%82%BF%E3%83%83%E3%83%88%E3%83%BB%E3%82%82/%E3%82%BB%E3%83%BC%E3%83%95%E3%82%BF%E3%82%A4%E3%83%88?format=original'
+    thumb: 'https://m.media-amazon.com/images/I/81ZbKIAivOL._AC_UF1000,1000_QL80_.jpg'
   },
   {
     id: 12,
