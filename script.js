@@ -81,6 +81,13 @@ const games = [
     genre: 'casual',
     path: 'Games/CookieClicker.html',
     thumb: 'https://g.hebi.gg/cookie-clicker/cookie-clicker.jpg'
+  } 
+  {
+    id: 13,
+    title: 'UnderTale',
+    genre: 'casual',
+    path: 'Games/Undertale.html',
+    thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg50zBrs6KuLnjGh0HoUCeBRySQtb_XBbUy_a0glzDV6mE6_sVVGSbSr3N&s=10'
   }
 ];
 
