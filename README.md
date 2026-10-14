@@ -27,10 +27,12 @@ Play Off！はブラウザで遊べるゲームを集めています。
 - 追加してほしいゲームや機能、評価を送れます。
 [こちらから](https://forms.gle/kG2yhXak9CqULdQ39)
 ## やるべきこと
- - [ ] GB/GBA,DSなどのレトロゲーム対応
+ - [ ] EmulatorJS導入
  - [ ] UIを独自性の高いものへ
  - [ ] セーブデータを保存できるように。
  - [ ] 左のサイドバーをCrazyGamesに近づけたい。
+ - [ ] 1v1.lolなどの追加
+ - [ ] Burnin' Rubber 5 XSをiframe埋め込み依存から脱却
 
  ### 開発者
   - off_mix
