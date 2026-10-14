@@ -64,7 +64,7 @@ const games = [
   }, {
     id: 10,
     title: 'Survivor.io',
-    genre: 'action',
+    genre: 'iogame',
     path: 'Games/Survivor.io.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvuruXdzy2W6gxRCsvJUmSOnqOC--IASAyZFsRmnakQA&s=10'
   },
@@ -78,7 +78,7 @@ const games = [
   {
     id: 12,
     title: 'Paper.io',
-    genre: 'casual',
+    genre: 'iogame',
     path: 'Games/Paperio.html',
     thumb: 'https://paperio3d.org//data/image/game/paper-io-favicon.jpg'
   },
@@ -96,6 +96,49 @@ const games = [
     path: 'Games/Undertale.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg50zBrs6KuLnjGh0HoUCeBRySQtb_XBbUy_a0glzDV6mE6_sVVGSbSr3N&s=10'
   }
+{
+    id: 15,
+    title: 'Slither.io',
+    genre: 'iogame',
+    path: 'Games/Slither.io.html',
+    thumb: 'https://imgs.crazygames.com/games/slitherio/cover-1587331280441.png?format=auto&quality=100&metadata=none&width=1200'
+  }
+{
+    id: 16,
+    title: 'Block Blast',
+    genre: 'casual',
+    path: 'Games/Block Blast.html',
+    thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgIb7d5_g-i_ouK7U45WmMLRUCIUgEAR_5mfnxCBHvTg&s=10'
+  }
+{
+    id: 17,
+    title: 'R.E.P.O',
+    genre: 'action',
+    path: 'Games/REPO.html',
+    thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRgAxCe4WV_w3YhvKJxUmZn7hV_8yHmGulR1MXsoNqQ&s=10'
+  }
+{
+    id: 18,
+    title: 'Snow.io',
+    genre: 'action',
+    path: 'Games/Snow.io.html',
+    thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtBX44GQvtdN4XRC-WirHMgiexZD_Zb-Hjh9iESyvGTw&s=10'
+  }
+{
+    id: 19,
+    title: 'Snowride',
+    genre: 'casual',
+    path: 'Games/Snowride.html',
+    thumb: 'https://imgs.crazygames.com/snow-rider-3d_16x9/20260120063434/snow-rider-3d_16x9-cover?metadata=none&quality=60&height=6212'
+  }
+{
+    id: 20,
+    title: 'ちいかわパズル',
+    genre: 'puzzle',
+    path: 'Games/Chikawa.html',
+    thumb: '
+      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbLUytF6Ea310R05pGmYL_icBYC5kdC2D7ehYNpkGSuA&s'
+  }
 ];
 
 const allGamesContainer = document.getElementById('allGamesContainer');
@@ -110,6 +153,8 @@ const genreLabels = {
   racing: 'レーシング',
   casual: 'カジュアル',
   simulator: 'シミュレーター'
+  iogame: 'ioゲーム'
+  puzzle: 'パズル'
 };
 
 function getGenreLabel(genre) {
