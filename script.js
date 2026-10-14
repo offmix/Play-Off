@@ -144,7 +144,7 @@ const games = [
     title: "Burnin' Rubber 5 XS",
     genre: 'racing',
     path: "Games/Burnin' Rubber 5 XS.html",
-    thumb: "data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20640%20360%22%3E%3Cdefs%3E%3ClinearGradient%20id%3D%22g%22%20x2%3D%221%22%20y2%3D%221%22%3E%3Cstop%20stop-color%3D%22%23182642%22%2F%3E%3Cstop%20offset%3D%221%22%20stop-color%3D%22%23246c78%22%2F%3E%3C%2FlinearGradient%3E%3C%2Fdefs%3E%3Crect%20width%3D%22640%22%20height%3D%22360%22%20fill%3D%22url(%23g)%22%2F%3E%3Ccircle%20cx%3D%22320%22%20cy%3D%22180%22%20r%3D%2274%22%20fill%3D%22%23fff%22%20fill-opacity%3D%22.12%22%2F%3E%3Cpath%20d%3D%22M270%20168h22m-11-11v22m49-9h.1m18%200h.1%22%20stroke%3D%22%23fff%22%20stroke-width%3D%2210%22%20stroke-linecap%3D%22round%22%2F%3E%3Ctext%20x%3D%22320%22%20y%3D%22270%22%20fill%3D%22%23fff%22%20font-family%3D%22sans-serif%22%20font-size%3D%2224%22%20text-anchor%3D%22middle%22%3EPLAY%3C%2Ftext%3E%3C%2Fsvg%3E"
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLs9JpAgQXiieoPlVjNehQoQwgEgnRnSOjuc4VQvIa3g&s=10"
 
   }
 ];
