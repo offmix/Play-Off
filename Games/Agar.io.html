@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+    <title>Agar.io Clone</title>
+    <style>body {
+        margin: 0;
+        overflow: hidden;
+        background: #1a1a2e;
+        font-family: Arial
+    }
+
+    canvas {
+        position: fixed
+    }
+
+    .hud {
+        position: fixed;
+        padding: 10px;
+        color: #fff;
+        pointer-events: none
+    }
+
+    .score {
+        top: 10px;
+        right: 10px
+    }
+
+    .powerup {
+        top: 10px;
+        left: 10px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px
+    }
+
+    .gameover {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgba(0, 0, 0, 0.8);
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+        display: none
+    }
+
+    .gameover button {
+        background: #4CAF50;
+        border: none;
+        color: white;
+        padding: 15px 32px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 5px
+    }</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="hud score" id="score">Score: 0</div>
+<div class="hud powerup" id="powerup"></div>
+<div class="gameover" id="gameover"><h1 style="color:white">Game Over</h1>
+    <p style="color:white">Final Score: <span id="finalScore">0</span></p>
+    <button onclick="restartGame()">Play Again</button>
+</div>
+<script>
+    const c = document.getElementById('c');
+    const ctx = c.getContext('2d');
+    let w = c.width = innerWidth;
+    let h = c.height = innerHeight;
+    let entities = [];
+    let player;
+    const BASE_WORLD_SIZE = 4000;
+    let WORLD_SIZE = BASE_WORLD_SIZE;
+    const FOOD_COUNT = 300;
+    const BOT_COUNT = 15;
+    const POWERUP_COUNT = 5;
+    let score = 0;
+    let targetScale = 1;
+
+    class Vec2 {
+        constructor(x, y) {
+            this.x = x;
+            this.y = y
+        }
+
+        add(v) {
+            return new Vec2(this.x + v.x, this.y + v.y)
+        }
+
+        sub(v) {
+            return new Vec2(this.x - v.x, this.y - v.y)
+        }
+
+        mul(n) {
+            return new Vec2(this.x * n, this.y * n)
+        }
+
+        div(n) {
+            return new Vec2(this.x / n, this.y / n)
+        }
+
+        mag() {
+            return Math.sqrt(this.x * this.x + this.y * this.y)
+        }
+
+        norm() {
+            return this.div(this.mag() || 1)
+        }
+
+        dist(v) {
+            return this.sub(v).mag()
+        }
+    }
+
+    class Entity {
+        constructor(x, y, r) {
+            this.pos = new Vec2(x, y);
+            this.vel = new Vec2(0, 0);
+            this.r = r;
+            this.targetR = r;
+            this.color = `hsl(${Math.random() * 360},70%,50%)`;
+            this.dead = false
+        }
+
+        update() {
+            if (Math.abs(this.r - this.targetR) > 0.1) this.r += (this.targetR - this.r) * 0.1
+        }
+
+        draw() {
+            ctx.beginPath();
+            ctx.fillStyle = this.color;
+            ctx.arc(this.pos.x, this.pos.y, this.r, 0, Math.PI * 2);
+            ctx.fill()
+        }
+    }
+
+    class Food extends Entity {
+        constructor() {
+            super(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE, 4)
+        }
+    }
+
+    class PowerUp extends Entity {
+        constructor() {
+            super(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE, 12);
+            this.type = ['speed', 'size', 'magnet', 'shield'][Math.floor(Math.random() * 4)];
+            this.color = {speed: '#ff0', size: '#f0f', magnet: '#0ff', shield: '#0f0'}[this.type]
+        }
+
+        draw() {
+            super.draw();
+            ctx.save();
+            ctx.translate(this.pos.x, this.pos.y);
+            for (let i = 0; i < 5; i++) {
+                ctx.rotate(Math.PI * 2 / 5);
+                ctx.beginPath();
+                ctx.moveTo(0, 0);
+                ctx.lineTo(0, -this.r * 1.5);
+                ctx.strokeStyle = this.color;
+                ctx.stroke()
+            }
+            ctx.restore()
+        }
+    }
+
+    class Player extends Entity {
+        constructor(x, y) {
+            super(x, y, 20);
+            this.maxSpeed = 5;
+            this.boost = false;
+            this.powerups = {};
+            this.shield = false;
+            this.magnetRange = 0;
+            this.alive = true
+        }
+
+        update() {
+            if (!this.alive) return;
+            const target = new Vec2((mouseX / camera.scale) + player.pos.x, (mouseY / camera.scale) + player.pos.y);
+            const dir = target.sub(this.pos).norm();
+            this.vel = dir.mul(this.maxSpeed * (this.boost ? 1.5 : 1));
+            this.pos = this.pos.add(this.vel);
+            WORLD_SIZE = BASE_WORLD_SIZE * (1 + this.r / 100);
+            this.pos.x = Math.max(0, Math.min(WORLD_SIZE, this.pos.x));
+            this.pos.y = Math.max(0, Math.min(WORLD_SIZE, this.pos.y));
+            if (this.boost && this.targetR > 10) {
+                this.targetR -= 0.1;
+                score = Math.max(0, Math.floor(score - 2));
+                document.getElementById('score').textContent = `Score: ${score}`
+            }
+            super.update();
+            if (this.magnetRange > 0) {
+                const range = this.magnetRange * (this.r / 20);
+                entities.forEach(e => {
+                    if (e instanceof Food && this.pos.dist(e.pos) < range) {
+                        const pull = this.pos.sub(e.pos).norm().mul(10);
+                        e.pos = e.pos.add(pull)
+                    }
+                })
+            }
+            entities.forEach(e => {
+                if (!e.dead && e !== this && this.pos.dist(e.pos) < this.r && this.r > e.r * 1.2) {
+                    if (e instanceof PowerUp) {
+                        this.activatePowerup(e.type);
+                        e.dead = true;
+                        entities.push(new PowerUp())
+                    } else {
+                        this.targetR = Math.sqrt(this.r * this.r + e.r * e.r);
+                        e.dead = true;
+                        if (e instanceof Food) {
+                            score += 10;
+                            entities.push(new Food())
+                        } else {
+                            score += 50
+                        }
+                        document.getElementById('score').textContent = `Score: ${score}`
+                    }
+                } else if (!e.dead && e !== this && e instanceof Bot && this.pos.dist(e.pos) < e.r && e.r > this.r * 1.2 && !this.shield) {
+                    this.die()
+                }
+            })
+        }
+
+        die() {
+            this.alive = false;
+            document.getElementById('gameover').style.display = 'block';
+            document.getElementById('finalScore').textContent = score
+        }
+
+        activatePowerup(type) {
+            this.powerups[type] = {duration: 15};
+            updatePowerupDisplay();
+            switch (type) {
+                case'speed':
+                    this.maxSpeed = 8;
+                    break;
+                case'size':
+                    this.targetR *= 1.2;
+                    break;
+                case'magnet':
+                    this.magnetRange = 200;
+                    break;
+                case'shield':
+                    this.shield = true;
+                    break
+            }
+            clearTimeout(this.powerups[type].timer);
+            this.powerups[type].timer = setTimeout(() => {
+                this.maxSpeed = 5;
+                if (type === 'magnet') this.magnetRange = 0;
+                if (type === 'shield') this.shield = false;
+                delete this.powerups[type];
+                updatePowerupDisplay()
+            }, 15000);
+            let countdown = 14;
+            const timer = setInterval(() => {
+                if (this.powerups[type]) {
+                    this.powerups[type].duration = countdown
+                }
+                updatePowerupDisplay();
+                countdown--;
+                if (countdown < 0) clearInterval(timer)
+            }, 1000)
+        }
+
+        draw() {
+            if (this.shield) {
+                ctx.beginPath();
+                ctx.strokeStyle = '#0f0';
+                ctx.arc(this.pos.x, this.pos.y, this.r + 5, 0, Math.PI * 2);
+                ctx.stroke()
+            }
+            super.draw();
+            if (this.magnetRange > 0) {
+                ctx.beginPath();
+                ctx.strokeStyle = '#0ff4';
+                ctx.setLineDash([5, 5]);
+                ctx.arc(this.pos.x, this.pos.y, this.magnetRange * (this.r / 20), 0, Math.PI * 2);
+                ctx.stroke();
+                ctx.setLineDash([])
+            }
+        }
+    }
+
+    class Bot extends Entity {
+        constructor() {
+            super(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE, 15 + Math.random() * 10);
+            this.maxSpeed = 3;
+            this.target = new Vec2(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE)
+        }
+
+        update() {
+            if (Math.random() < 0.01 || this.pos.dist(this.target) < 50) {
+                this.target = new Vec2(Math.random() * WORLD_SIZE, Math.random() * WORLD_SIZE)
+            }
+            const dir = this.target.sub(this.pos).norm();
+            this.vel = dir.mul(this.maxSpeed);
+            this.pos = this.pos.add(this.vel);
+            this.pos.x = Math.max(0, Math.min(WORLD_SIZE, this.pos.x));
+            this.pos.y = Math.max(0, Math.min(WORLD_SIZE, this.pos.y));
+            super.update();
+            entities.forEach(e => {
+                if (!e.dead && e !== this && this.pos.dist(e.pos) < this.r && this.r > e.r * 1.2) {
+                    e.dead = true;
+                    this.targetR = Math.sqrt(this.r * this.r + e.r * e.r);
+                    if (e instanceof Food) entities.push(new Food())
+                }
+            })
+        }
+    }
+
+    const camera = {x: 0, y: 0, scale: 1};
+    let mouseX = 0, mouseY = 0;
+    addEventListener('mousemove', e => {
+        mouseX = e.clientX - w / 2;
+        mouseY = e.clientY - h / 2
+    });
+    addEventListener('keydown', e => {
+        if (e.code === 'Space') player.boost = true
+    });
+    addEventListener('keyup', e => {
+        if (e.code === 'Space') player.boost = false
+    });
+    addEventListener('resize', () => {
+        w = c.width = innerWidth;
+        h = c.height = innerHeight
+    });
+
+    function updatePowerupDisplay() {
+        let html = '';
+        for (let type in player.powerups) {
+            html += `<div style="color:${type === 'speed' ? '#ff0' : type === 'size' ? '#f0f' : type === 'magnet' ? '#0ff' : '#0f0'}">${type.toUpperCase()}: ${player.powerups[type].duration}s</div>`
+        }
+        document.getElementById('powerup').innerHTML = html
+    }
+
+    function init() {
+        entities = [];
+        player = new Player(WORLD_SIZE / 2, WORLD_SIZE / 2);
+        entities.push(player);
+        for (let i = 0; i < FOOD_COUNT; i++) entities.push(new Food());
+        for (let i = 0; i < BOT_COUNT; i++) entities.push(new Bot());
+        for (let i = 0; i < POWERUP_COUNT; i++) entities.push(new PowerUp())
+    }
+
+    function restartGame() {
+        document.getElementById('gameover').style.display = 'none';
+        score = 0;
+        document.getElementById('score').textContent = 'Score: 0';
+        WORLD_SIZE = BASE_WORLD_SIZE;
+        init()
+    }
+
+    function update() {
+        const currentFoodCount = entities.filter(e => e instanceof Food).length;
+        const targetFoodCount = Math.floor(FOOD_COUNT * (WORLD_SIZE / BASE_WORLD_SIZE));
+        for (let i = currentFoodCount; i < targetFoodCount; i++) {
+            entities.push(new Food())
+        }
+        const botCount = entities.filter(e => e instanceof Bot).length;
+        for (let i = botCount; i < BOT_COUNT; i++) {
+            entities.push(new Bot())
+        }
+        entities = entities.filter(e => !e.dead);
+        entities.forEach(e => e.update());
+        targetScale = 64 / player.r;
+        camera.scale += (targetScale - camera.scale) * 0.1;
+        camera.x = player.pos.x - w / 2 / camera.scale;
+        camera.y = player.pos.y - h / 2 / camera.scale
+    }
+
+    function draw() {
+        ctx.fillStyle = '#1a1a2e';
+        ctx.fillRect(0, 0, w, h);
+        ctx.save();
+        ctx.translate(w / 2, h / 2);
+        ctx.scale(camera.scale, camera.scale);
+        ctx.translate(-player.pos.x, -player.pos.y);
+        ctx.strokeStyle = '#ffffff22';
+        ctx.beginPath();
+        for (let x = 0; x < WORLD_SIZE; x += 100) {
+            ctx.moveTo(x, 0);
+            ctx.lineTo(x, WORLD_SIZE)
+        }
+        for (let y = 0; y < WORLD_SIZE; y += 100) {
+            ctx.moveTo(0, y);
+            ctx.lineTo(WORLD_SIZE, y)
+        }
+        ctx.stroke();
+        entities.forEach(e => e.draw());
+        ctx.restore()
+    }
+
+    function loop() {
+        update();
+        draw();
+        requestAnimationFrame(loop)
+    }
+
+    init();
+    loop()</script>
+</body>
+</html>
