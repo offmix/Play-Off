@@ -1,6 +1,6 @@
 # Play Off！
 気軽に遊べるゲーム
-![Play Off! ロゴ](./image/icon.svg)
+![Play Off! ロゴ](./image/Icon.svg)
 ## 概要
 Play Off！はブラウザで遊べるゲームを集めています。
 ブラウザからすぐにアクセスでき、軽い動作を目指しています。  
