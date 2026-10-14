@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#141819" />
+    <meta
+      name="description"
+      content="ページを公開する準備を進めています。もうしばらくお待ちください。"
+    />
+    <title>準備中</title>
+    <link rel="icon" href="data:," />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Zen+Kaku+Gothic+New:wght@400;500;700&family=M+PLUS+Rounded+1c:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        color-scheme: dark;
+        --background: #141819;
+        --text: #eef1eb;
+        --muted: #a8b1ad;
+        --accent: #9fc2b3;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html,
+      body {
+        width: 100%;
+        min-width: 320px;
+        min-height: 100%;
+        margin: 0;
+        background: var(--background);
+      }
+
+      body {
+        min-height: 100vh;
+        min-height: 100dvh;
+        color: var(--text);
+        font-family: "Zen Kaku Gothic New", sans-serif;
+      }
+
+      .page {
+        display: grid;
+        min-height: 100vh;
+        min-height: 100dvh;
+        place-content: center;
+        justify-items: center;
+        padding: 32px 24px;
+        text-align: center;
+      }
+
+      h1 {
+        margin: 0;
+        color: var(--text);
+        font-family: "Zen Kaku Gothic New", sans-serif;
+        font-size: clamp(40px, 7vw, 72px);
+        font-weight: 500;
+        line-height: 1.4;
+        letter-spacing: 0.12em;
+      }
+
+      .status-track {
+        width: 64px;
+        height: 2px;
+        margin: 22px auto 18px;
+        background: #343c3a;
+      }
+
+      .status-track span {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background: var(--accent);
+      }
+
+      .message {
+        max-width: 30rem;
+        margin: 0;
+        color: var(--muted);
+        font-size: clamp(14px, 1.8vw, 16px);
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        line-height: 1.9;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="page">
+      <h1>準備中</h1>
+      <div class="status-track" aria-hidden="true"><span></span></div>
+      <p class="message">ページを公開する準備を進めています。<br />もうしばらくお待ちください。</p>
+    </main>
+  </body>
+</html>
