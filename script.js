@@ -146,6 +146,14 @@ const games = [
     path: "Games/Burnin' Rubber 5 XS.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRLs9JpAgQXiieoPlVjNehQoQwgEgnRnSOjuc4VQvIa3g&s=10"
 
+  },
+   {
+    id: 22,
+    title: "Agar.io",
+    genre: 'iogame',
+    path: "Games/Burnin'Agar.io.html",
+    thumb: "https://agaronline.io//data/image/game/f6bd63ca150f0bf49c9dd61bae254c33_fgraphic.png"
+
   }
 ];
 
