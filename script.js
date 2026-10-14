@@ -55,13 +55,14 @@ const games = [
     path: 'Games/Slope 2 Player.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSCIyOlCeQ_dhbh7Q0gL2jZJ0tkhFSc0aOJhO4EowcZHw&s'
   },
-   {
+  {
     id: 9,
     title: 'Slope 3',
     genre: 'action',
     path: 'Games/Slope3.html',
     thumb: 'https://slopegame.net/data/image/game/slope-3.jpg'
-  }, {
+  },
+  {
     id: 10,
     title: 'Survivor.io',
     genre: 'iogame',
@@ -73,7 +74,7 @@ const games = [
     title: 'GTA Vice City',
     genre: 'action',
     path: 'Games/GTA%20Vice%20City.html',
-    thumb: 'https://static.wikia.nocookie.net/gta4150/images/3/3e/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%BB%E3%83%95%E3%83%88%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%BB%E3%83%90%E3%82%A4%E3%82%B9%E3%82%B7%E3%83%86%E3%82%A3.JPG/revision/latest?cb=20230914144840&path-prefix=ja'
+    thumb: 'https://static.wikia.nocookie.net/gta4150/images/3/3e/%E3%82%B0%E3%83%A9%E3%83%B3%E3%83%89%E3%83%BB%E3%82%BB%E3%83%95%E3%83%88%E3%83%BB%E3%82%AA%E3%83%BC%E3%83%88%E3%83%BB%E3%83%90%E3%83%83%E3%82%AF%E3%82%B9%E3%82%BF%E3%83%83%E3%83%88%E3%83%BB%E3%82%82/%E3%82%BB%E3%83%BC%E3%83%95%E3%82%BF%E3%82%A4%E3%83%88?format=original'
   },
   {
     id: 12,
@@ -88,56 +89,55 @@ const games = [
     genre: 'casual',
     path: 'Games/CookieClicker.html',
     thumb: 'https://g.hebi.gg/cookie-clicker/cookie-clicker.jpg'
-  } 
+  },
   {
     id: 14,
     title: 'UnderTale',
     genre: 'casual',
     path: 'Games/Undertale.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg50zBrs6KuLnjGh0HoUCeBRySQtb_XBbUy_a0glzDV6mE6_sVVGSbSr3N&s=10'
-  }
-{
+  },
+  {
     id: 15,
     title: 'Slither.io',
     genre: 'iogame',
     path: 'Games/Slither.io.html',
     thumb: 'https://imgs.crazygames.com/games/slitherio/cover-1587331280441.png?format=auto&quality=100&metadata=none&width=1200'
-  }
-{
+  },
+  {
     id: 16,
     title: 'Block Blast',
     genre: 'casual',
     path: 'Games/Block Blast.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgIb7d5_g-i_ouK7U45WmMLRUCIUgEAR_5mfnxCBHvTg&s=10'
-  }
-{
+  },
+  {
     id: 17,
     title: 'R.E.P.O',
     genre: 'action',
     path: 'Games/REPO.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRDRgAxCe4WV_w3YhvKJxUmZn7hV_8yHmGulR1MXsoNqQ&s=10'
-  }
-{
+  },
+  {
     id: 18,
     title: 'Snow.io',
     genre: 'action',
     path: 'Games/Snow.io.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtBX44GQvtdN4XRC-WirHMgiexZD_Zb-Hjh9iESyvGTw&s=10'
-  }
-{
+  },
+  {
     id: 19,
     title: 'Snowride',
     genre: 'casual',
     path: 'Games/Snowride.html',
     thumb: 'https://imgs.crazygames.com/snow-rider-3d_16x9/20260120063434/snow-rider-3d_16x9-cover?metadata=none&quality=60&height=6212'
-  }
-{
+  },
+  {
     id: 20,
     title: 'ちいかわパズル',
     genre: 'puzzle',
     path: 'Games/Chikawa.html',
-    thumb: '
-      'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbLUytF6Ea310R05pGmYL_icBYC5kdC2D7ehYNpkGSuA&s'
+    thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbLUytF6Ea310R05pGmYL_icBYC5kdC2D7ehYNpkGSuA&s'
   }
 ];
 
@@ -152,8 +152,8 @@ const genreLabels = {
   action: 'アクション',
   racing: 'レーシング',
   casual: 'カジュアル',
-  simulator: 'シミュレーター'
-  iogame: 'ioゲーム'
+  simulator: 'シミュレーター',
+  iogame: 'ioゲーム',
   puzzle: 'パズル'
 };
 
@@ -203,13 +203,12 @@ function filterAndDisplayGames() {
   noResults.style.display = 'none';
 
   if (currentGenre === 'all') {
-    // ジャンルごとに分ける
     const grouped = {};
-    Object.keys(genreLabels).forEach(genre => {
+    Object.keys(genreLabels).forEach((genre) => {
       grouped[genre] = [];
     });
 
-    filtered.forEach(game => {
+    filtered.forEach((game) => {
       if (grouped[game.genre]) {
         grouped[game.genre].push(game);
       }
@@ -234,7 +233,6 @@ function filterAndDisplayGames() {
 
     allGamesContainer.innerHTML = html;
   } else {
-    // 選択されたジャンルのみ表示
     const html = `
       <div class="genre-section">
         <div class="genre-header">
