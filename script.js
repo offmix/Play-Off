@@ -121,7 +121,7 @@ const games = [
   {
     id: 18,
     title: 'Snow.io',
-    genre: 'action',
+    genre: 'iogame',
     path: 'Games/Snow.io.html',
     thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQtBX44GQvtdN4XRC-WirHMgiexZD_Zb-Hjh9iESyvGTw&s=10'
   },
