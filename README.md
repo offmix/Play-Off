@@ -37,6 +37,7 @@ Play Off！はブラウザで遊べるゲームを集めています。
  ### 開発者
   - off_mix
   - E233-NambuLine
+  - midmedusa
 
 ---
 
