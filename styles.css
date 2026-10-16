@@ -449,3 +449,191 @@ a {
     height: 260px;
   }
 }
+
+
+/* Docked sidebar and landscape game cards */
+:root {
+  --ui-radius: 2px;
+}
+
+.topbar {
+  margin-left: 240px;
+}
+
+.topbar-container {
+  max-width: none;
+  margin: 0;
+}
+
+.main-wrapper {
+  display: block;
+  max-width: none;
+  margin: 0 0 0 240px;
+  padding: 24px;
+}
+
+.sidebar {
+  position: fixed;
+  z-index: 110;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 240px;
+  height: auto;
+  overflow-y: auto;
+  background: var(--panel);
+  border-right: 1px solid var(--line);
+}
+
+.sidebar-section {
+  min-height: 100%;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  padding: 24px 16px;
+}
+
+.category-buttons {
+  gap: 6px;
+}
+
+.category-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-color: transparent;
+  border-radius: var(--ui-radius);
+  padding: 11px 12px;
+}
+
+.category-icon {
+  width: 18px;
+  height: 18px;
+  flex: 0 0 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.category-btn.active .category-icon {
+  stroke: currentColor;
+}
+
+.search-wrap,
+.hero,
+.game-card,
+.play-button {
+  border-radius: var(--ui-radius);
+}
+
+.game-card {
+  flex-direction: row;
+  width: 320px;
+  height: 160px;
+}
+
+.game-thumbnail {
+  width: 42%;
+  height: 100%;
+  border-radius: 0;
+}
+
+.game-thumbnail::before {
+  border-radius: 0;
+}
+
+.game-info {
+  padding: 14px;
+}
+
+.game-title {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  font-size: 0.95rem;
+  line-height: 1.25;
+}
+
+.game-genre {
+  margin-bottom: 8px;
+}
+
+.play-button {
+  width: 32px;
+  height: 32px;
+}
+
+@media (max-width: 1024px) {
+  .topbar {
+    margin-left: 210px;
+  }
+
+  .main-wrapper {
+    margin-left: 210px;
+  }
+
+  .sidebar {
+    top: 0;
+    width: 210px;
+  }
+
+  .game-card {
+    width: 288px;
+    height: 144px;
+  }
+}
+
+@media (max-width: 768px) {
+  .topbar {
+    margin-left: 0;
+  }
+
+  .main-wrapper {
+    display: block;
+    margin-left: 0;
+  }
+
+  .sidebar {
+    position: relative;
+    inset: auto;
+    width: auto;
+    height: auto;
+    overflow: visible;
+    background: transparent;
+    border: 0;
+    order: -1;
+  }
+
+  .sidebar-section {
+    min-height: 0;
+    background: var(--panel);
+    border: 1px solid var(--line);
+    border-radius: var(--ui-radius);
+    padding: 14px;
+  }
+
+  .game-card {
+    width: 280px;
+    height: 140px;
+  }
+}
+
+@media (max-width: 640px) {
+  .game-card {
+    width: 260px;
+    height: 132px;
+  }
+}
+
+@media (max-width: 640px) {
+  .category-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .sidebar {
+    margin-bottom: 16px;
+  }
+}
