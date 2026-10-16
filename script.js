@@ -169,6 +169,13 @@ const games = [
     genre: 'casual',
     path: "Games/Burnin'Runner Template.html",
     thumb: "https://www.freegames.com/cdn-cgi/image/quality=78,format=auto/thumb/300x300/Driver-Run-3d.jpg"
+  },
+     {
+    id: 25,
+    title: "Granny",
+    genre: 'horror',
+    path: "Games/Granny.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREm4MwNESkNigVrnPn-ocRdt5NlI2b6VQiY-8JXrMN1A&s"
   }
 ];
 
@@ -185,7 +192,8 @@ const genreLabels = {
   casual: 'カジュアル',
   simulator: 'シミュレーター',
   iogame: 'ioゲーム',
-  puzzle: 'パズル'
+  puzzle: 'パズル',
+  horror: 'ホラー'
 };
 
 function getGenreLabel(genre) {
