@@ -176,6 +176,13 @@ const games = [
     genre: 'horror',
     path: "Games/Granny.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcREm4MwNESkNigVrnPn-ocRdt5NlI2b6VQiY-8JXrMN1A&s"
+  },
+    {
+    id: 26,
+    title: "State.io",
+    genre: 'iogame',
+    path: "Games/State.io.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4BVOE3RksR0e4Lsi4YqLF2K2bNmqUnt9hZx_OUQtlutQIvjAWbBd1gqc&s=10"
   }
 ];
 
