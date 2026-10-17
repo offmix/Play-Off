@@ -183,6 +183,13 @@ const games = [
     genre: 'iogame',
     path: "Games/State.io.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4BVOE3RksR0e4Lsi4YqLF2K2bNmqUnt9hZx_OUQtlutQIvjAWbBd1gqc&s=10"
+  }, 
+  {
+    id: 27,
+    title: "Super Liquid Soccer",
+    genre: 'sport',
+    path: "Games/Super Liquid Soccer.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNYCLhBv8bowjDwLdcqOZM9urPZIy1ZjzxEzNaPOZvyg&s=10"
   }
 ];
 
@@ -200,7 +207,8 @@ const genreLabels = {
   simulator: 'シミュレーター',
   iogame: 'ioゲーム',
   puzzle: 'パズル',
-  horror: 'ホラー'
+  horror: 'ホラー',
+  sport: 'スポーツ'
 };
 
 function getGenreLabel(genre) {
