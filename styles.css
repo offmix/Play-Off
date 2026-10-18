@@ -1,13 +1,13 @@
 :root {
-  --bg: #050609;
-  --bg-2: #0a0d14;
-  --panel: #0f1219;
-  --panel-2: #12151f;
-  --line: #1a1f2e;
-  --text: #e8ecf1;
-  --muted: #8b92a5;
-  --accent: #4fc3f7;
-  --accent-2: #7fc7ff;
+  --bg: #06080c;
+  --bg-2: #0b111a;
+  --panel: #141b27;
+  --panel-2: #1a2635;
+  --line: #65758b;
+  --text: #f5f8fc;
+  --muted: #c4cfdf;
+  --accent: #61d8ff;
+  --accent-2: #a4e7ff;
 }
 
 * {
@@ -81,7 +81,7 @@ a {
 
 .search-wrap:focus-within {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(79,195,247,0.08);
+  box-shadow: 0 0 0 3px rgba(97,216,255,0.2);
 }
 
 .search-icon {
@@ -173,7 +173,7 @@ a {
 }
 
 .hero {
-  background: linear-gradient(135deg, rgba(79,195,247,0.08), rgba(124,156,255,0.04));
+  background: linear-gradient(135deg, rgba(97,216,255,0.16), rgba(124,156,255,0.08));
   border: 1px solid var(--line);
   border-radius: 8px;
   padding: 40px 28px;
@@ -280,7 +280,7 @@ a {
 .game-card:hover {
   transform: translateY(-6px);
   border-color: var(--accent);
-  box-shadow: 0 20px 40px rgba(79,195,247,0.12);
+  box-shadow: 0 20px 40px rgba(97,216,255,0.22);
 }
 
 .game-thumbnail {
@@ -636,4 +636,21 @@ a {
   .sidebar {
     margin-bottom: 16px;
   }
+}
+
+
+.category-btn:hover:not(.active) {
+  background: rgba(97, 216, 255, 0.1);
+}
+
+.category-btn:focus-visible,
+.play-button:focus-visible,
+.brand:focus-visible,
+#searchInput:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.no-results svg {
+  opacity: 0.8;
 }
