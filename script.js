@@ -194,7 +194,7 @@ const games = [
    {
     id: 28,
     title: "Parking Fury",
-    genre: 'sport',
+    genre: 'simulator',
     path: "Games/Parking Fury.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6di7lm4iM_DbRBbQHzYza7PNS_mp36I29EpMMOunTzg&s=10"
   }
