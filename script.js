@@ -197,6 +197,13 @@ const games = [
     genre: 'simulator',
     path: "Games/Parking Fury.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6di7lm4iM_DbRBbQHzYza7PNS_mp36I29EpMMOunTzg&s=10"
+  },
+     {
+    id: 29,
+    title: "TimeShooter 2",
+    genre: 'Shooting',
+    path: "Games/TimeShooter 2.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyL30bra8s6xhPNxHPwWhBYDoDkd7ZFMaV1jH18IUqIA&s=10"
   }
 ];
 
@@ -215,7 +222,8 @@ const genreLabels = {
   iogame: 'ioゲーム',
   puzzle: 'パズル',
   horror: 'ホラー',
-  sport: 'スポーツ'
+  sport: 'スポーツ',
+　Shooting: 'シューティング'
 };
 
 function getGenreLabel(genre) {
