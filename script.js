@@ -204,7 +204,44 @@ const games = [
     genre: 'Shooting',
     path: "Games/TimeShooter 2.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyL30bra8s6xhPNxHPwWhBYDoDkd7ZFMaV1jH18IUqIA&s=10"
+  },
+      {
+    id: 30,
+    title: "Hole.io",
+    genre: 'iogame',
+    path: "Games/Hole.io.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSGCS_7Hoewind2my5HJd8DaPXtU1XlofdNzab-kngYMw&s=10"
+  },
+      {
+    id: 31,
+    title: "Ragdoll Soccer",
+    genre: 'sport',
+    path: "Games/Ragdoll Soccer.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtfpvvJH0iK0lloqRA6FMgNyY3HQmEo7mXgU4KVc8P-A&s=10"
+  },
+      {
+    id: 33,
+    title: "Monely Mort",
+    genre: 'Simulator',
+    path: "Games/Monely Mort.html",
+    thumb: "https://blockblastunblocked.com/_next/static/media/monkey_mart_why_play_1.40cf50aa.png"
+  },
+       {
+    id: 34,
+    title: "Papa's Sushiria",
+    genre: 'Simulator',
+    path: "Games/Papa's Sushiria.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX0C7Ua1fyQ0_lfxvj2OByX8rMVtiPpxfKoiPLUPljA&s=10"
+  },
+       {
+    id: 35,
+    title: "StickMan Hook",
+    genre: 'casual',
+    path: "Games/StickMan Hook.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjAUNqN9OmKR5zszw3837jCF7jPUgcz2lPEPLdfuR-Rg&s=10"
   }
+
+  
 ];
 
 const allGamesContainer = document.getElementById('allGamesContainer');
@@ -216,7 +253,7 @@ let currentGenre = 'all';
 
 const genreLabels = {
   action: 'アクション',
-  racing: 'レーシング',
+  racing: 'レーシング・ドライブ',
   casual: 'カジュアル',
   simulator: 'シミュレーター',
   iogame: 'ioゲーム',
