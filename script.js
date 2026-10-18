@@ -190,6 +190,13 @@ const games = [
     genre: 'sport',
     path: "Games/Super Liquid Soccer.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNYCLhBv8bowjDwLdcqOZM9urPZIy1ZjzxEzNaPOZvyg&s=10"
+  },
+   {
+    id: 28,
+    title: "Parking Fury",
+    genre: 'sport',
+    path: "Games/Parking Fury.html",
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6di7lm4iM_DbRBbQHzYza7PNS_mp36I29EpMMOunTzg&s=10"
   }
 ];
 
