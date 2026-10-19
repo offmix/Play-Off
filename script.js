@@ -196,7 +196,7 @@ const games = [
     title: "Parking Fury",
     genre: 'simulator',
     path: "Games/Parking Fury.html",
-    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6di7lm4iM_DbRBbQHzYza7PNS_mp36I29EpMMOunTzg&s=10"
+    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSh59TjyRGbd0b7XSUeDVTE6IGpMllQn_VVK5rkFT0Y-w&s"
   },
      {
     id: 29,
@@ -214,27 +214,20 @@ const games = [
   },
       {
     id: 31,
-    title: "Ragdoll Soccer",
-    genre: 'sport',
-    path: "Games/Ragdoll Soccer.html",
-    thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRtfpvvJH0iK0lloqRA6FMgNyY3HQmEo7mXgU4KVc8P-A&s=10"
-  },
-      {
-    id: 33,
     title: "Monely Mort",
     genre: 'Simulator',
     path: "Games/Monely Mort.html",
     thumb: "https://blockblastunblocked.com/_next/static/media/monkey_mart_why_play_1.40cf50aa.png"
   },
        {
-    id: 34,
+    id: 32,
     title: "Papa's Sushiria",
     genre: 'Simulator',
     path: "Games/Papa's Sushiria.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX0C7Ua1fyQ0_lfxvj2OByX8rMVtiPpxfKoiPLUPljA&s=10"
   },
        {
-    id: 35,
+    id: 33,
     title: "StickMan Hook",
     genre: 'casual',
     path: "Games/StickMan Hook.html",
