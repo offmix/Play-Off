@@ -222,7 +222,7 @@ const games = [
        {
     id: 32,
     title: "Papa's Sushiria",
-    genre: 'Simulator',
+    genre: 'simulator',
     path: "Games/Papa's Sushiria.html",
     thumb: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX0C7Ua1fyQ0_lfxvj2OByX8rMVtiPpxfKoiPLUPljA&s=10"
   },
