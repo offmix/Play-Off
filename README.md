@@ -37,6 +37,7 @@ Play Off！はブラウザで遊べるゲームを集めています。
  - [ ] 左のサイドバーをCrazyGamesに近づけたい。
  - [ ] 1v1.lolなどの追加
  - [ ] Burnin' Rubber 5 XSをiframe埋め込み依存から脱却
+ - [ ] 一部ゲームの不具合を直す
 
  ### 開発者
   - off_mix
