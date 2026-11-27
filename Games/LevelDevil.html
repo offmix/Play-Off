@@ -1,76 +1,31 @@
 <!DOCTYPE html>
-
-
-<!-- Ultimate Game Stash file--> 
-<!-- For the regularly updating doc go to https://docs.google.com/document/d/1_FmH3BlSBQI7FGgAQL59-ZPe8eCxs35wel6JUyVaG8Q/ -->
-
-
-<html lang="en">
-<base href="https://cdn.jsdelivr.net/gh/bubbls/UGS-Assets@2ac7e5b354322a207bd059768f928ece8c9471c1/level%20devil/">
+<html lang="ja">
 <head>
-  <meta charset="utf-8">
-
-  <title>Level Devil</title>
-
-  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="robots" content="noindex,nofollow" />
-
-  <link rel="shortcut icon" type="image/png" href="./favicon.png">
-  <script src="./poki-sdk.js"></script>
-  <script src="./Level Devil.js"></script>
-
-  <script>
-    window.addEventListener("touchmove", function(event) {
-      event.preventDefault();
-    }, {
-      capture: false,
-      passive: false
-    });
-    if (typeof window.devicePixelRatio != 'undefined' && window.devicePixelRatio > 2) {
-      var meta = document.getElementById("viewport");
-      meta.setAttribute('content', 'width=device-width, initial-scale=' + (2 / window.devicePixelRatio) + ', user-scalable=no');
-    }
-  </script>
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <title>Level Devil - Play Off!</title>
   <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      height: 100%;
-      overflow: hidden;
-    }
-
-    #openfl-content {
-      background: #000000;
-      width: 100%;
-      height: 100%;
-    }
-
-    #progress {
-      position: relative;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: 50%;
-    }
+    * { box-sizing: border-box; }
+    html, body { width: 100%; height: 100%; margin: 0; background: #101114; color: #fff; font-family: system-ui, sans-serif; }
+    body { display: flex; flex-direction: column; }
+    header { min-height: 52px; padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; gap: 12px; background: #191b20; }
+    h1 { margin: 0; font-size: 17px; }
+    a { color: #fff; }
+    .launch { padding: 8px 13px; border-radius: 8px; background: #e83c3c; text-decoration: none; font-weight: 700; }
+    main { flex: 1; min-height: 0; position: relative; }
+    iframe { display: block; width: 100%; height: 100%; border: 0; background: #000; }
+    .note { position: absolute; bottom: 8px; left: 50%; transform: translateX(-50%); max-width: calc(100% - 24px); padding: 6px 10px; border-radius: 6px; background: #101114cc; color: #ddd; font-size: 12px; text-align: center; pointer-events: none; }
   </style>
-
 </head>
-
 <body>
-
-  <noscript>This webpage makes extensive use of JavaScript. Please enable JavaScript in your web browser to view this page.</noscript>
-
-  <div id="openfl-content"></div>
-
-  <script>
-    lime.embed("Level Devil", "openfl-content", 854, 480, {
-      parameters: {}
-    });
-  </script>
-
+  <header>
+    <h1>Level Devil</h1>
+    <a class="launch" href="https://leveldevil.net/" target="_blank" rel="noopener noreferrer">別タブでゲームを開く ↗</a>
+  </header>
+  <main>
+    <iframe src="https://leveldevil.net/" title="Level Devil" allow="fullscreen; autoplay; gamepad" allowfullscreen></iframe>
+    <div class="note">ゲームが表示されない場合は「別タブでゲームを開く」を押してください。</div>
+  </main>
 </body>
-
-</html>            
+</html>

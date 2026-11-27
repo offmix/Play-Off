@@ -32,7 +32,8 @@ const games = [
   { id: 31, title: 'Monely Mort', genre: 'Simulator', path: 'Games/Monely Mort.html', thumb: 'https://blockblastunblocked.com/_next/static/media/monkey_mart_why_play_1.40cf50aa.png' },
   { id: 32, title: "Papa's Sushiria", genre: 'simulator', path: "Games/Papa's Sushiria.html", thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSX0C7Ua1fyQ0_lfxvj2OByX8rMVtiPpxfKoiPLUPljA&s=10' },
   { id: 33, title: 'StickMan Hook', genre: 'casual', path: 'Games/StickMan Hook.html', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjAUNqN9OmKR5zszw3837jCF7jPUgcz2lPEPLdfuR-Rg&s=10' },
-  { id: 34, title: 'Count Control', genre: 'casual', path: 'Games/count-control/index.html', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dFS2tkxmyYo-Y-G39ebFP9YsXH3j3hN5cJZR8D6poA&s' }
+  { id: 34, title: 'Count Control', genre: 'casual', path: 'Games/count-control/index.html', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS9dFS2tkxmyYo-Y-G39ebFP9YsXH3j3hN5cJZR8D6poA&s' },
+  { id: 35, title: 'Level Devil', genre: 'casual', path: 'Games/LevelDevil.html', thumb: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTArhNxJlGnHOJe0rdJ6H3eK34DP7ZFboC5IdBtbCnB9A&s=10' }
 ];
 
 const allGamesContainer = document.getElementById('allGamesContainer');
