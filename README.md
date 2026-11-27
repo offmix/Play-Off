@@ -45,7 +45,8 @@ Play Off！はブラウザで遊べるゲームを集めています。
   - off_mix
   - E233-8000-NambuLine-MainLine
   - midmedusa
-
+### 注意
+- これは趣味のプロジェクトです。動作の保証などはありません。
 ---
 
 © 2026 Play Off! Contributors / Play Off！™  
